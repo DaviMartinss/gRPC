@@ -10,6 +10,8 @@ import proto.CreateImovelRequest;
 import proto.CreateImovelResponse;
 import proto.DeleteImovelRequest;
 import proto.DeleteImovelResponse;
+import proto.GetImovelByEnderecoRequest;
+import proto.GetImovelByEnderecoResponse;
 import proto.GetImovelByTituloRequest;
 import proto.GetImovelByTituloResponse;
 import proto.GetImovelRequest;
@@ -81,11 +83,8 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
         System.out.println("getImovelByTitulo");
         //if (imovelMap.containsValue(request.getTitulo())) {
         
-        
-        
-        
-        List<Imovel> imovelMapAUX = 
-        								imovelMap.entrySet()
+        List<Imovel> imovelMapAUX = imovelMap
+        								.entrySet()
         								.stream()
         								.filter(e -> e.getValue().getTitulo().equals(request.getTitulo()))
         								.map(Map.Entry::getValue)
@@ -94,7 +93,8 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
             System.out.println(imovelMapAUX);
             
             GetImovelByTituloResponse response = GetImovelByTituloResponse.newBuilder()
-            													.addAllImovel(imovelMapAUX).build(); 
+            															.addAllImovel(imovelMapAUX)
+            															.build(); 
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         //} else {
@@ -103,7 +103,32 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
         //}
  
     }
+    
+    @Override
+    public void getImovelByEndereco(GetImovelByEnderecoRequest request, StreamObserver<GetImovelByEnderecoResponse> responseObserver) {
+        System.out.println("getImovelByEndereco");
+        //if (imovelMap.containsValue(request.getTitulo())) {
+        List<Imovel> imovelMapAUX = imovelMap
+        								.entrySet()
+        								.stream()
+        								.filter(e -> e.getValue().getEndereco().equals(request.getEndereco()))
+        								.map(Map.Entry::getValue)
+        								.toList();
+            									
+            System.out.println(imovelMapAUX);
+            
+            GetImovelByEnderecoResponse response = GetImovelByEnderecoResponse.newBuilder()
+            															.addAllImovel(imovelMapAUX)
+            															.build(); 
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        //} else {
+        //    System.out.println("Imovel not found");
+        //    responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
+        //}
  
+    }
+    
     @Override
     public void listImovel(ListImovelRequest request, StreamObserver<ListImovelResponse> responseObserver) {
         System.out.println("List imovels");

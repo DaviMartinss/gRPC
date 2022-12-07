@@ -8,6 +8,8 @@ import proto.DeleteImovelRequest;
 import proto.DeleteImovelResponse;
 import proto.GetImovelByTituloRequest;
 import proto.GetImovelByTituloResponse;
+import proto.GetImovelByEnderecoRequest;
+import proto.GetImovelByEnderecoResponse;
 import proto.GetImovelRequest;
 import proto.GetImovelResponse;
 import proto.ListImovelRequest;
@@ -52,6 +54,11 @@ public class ImovelClient {
         System.out.println("FIND BY TÍTULO");
         System.out.println(getImovelByTituloResponse.getImovelList());
         
+        // FIND BY ENDEREÇO
+        GetImovelByEnderecoResponse getImovelByEnderecoResponse = imovelClient.getImovelByEndereco(
+        		GetImovelByEnderecoRequest.newBuilder().setEndereco("TESTE ENDERECO").build());
+        System.out.println("FIND BY ENDEREÇO");
+        System.out.println(getImovelByEnderecoResponse.getImovelList());
         
          //DELETE IMOVEL
         //DeleteImovelResponse deleteImovelResponse = imovelClient

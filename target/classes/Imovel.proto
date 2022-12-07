@@ -48,6 +48,13 @@ message GetImovelByTituloResponse {
 	repeated Imovel imovel = 1;
 }
  
+ message GetImovelByEnderecoRequest {
+	string endereco = 2;
+}
+
+message GetImovelByEnderecoResponse {
+	repeated Imovel imovel = 1;
+}
 message ListImovelRequest {
  
 }
@@ -61,5 +68,6 @@ service ImovelService {
     rpc DeleteImovel(DeleteImovelRequest) returns (DeleteImovelResponse);
     rpc GetImovel(GetImovelRequest) returns (GetImovelResponse);
     rpc GetImovelByTitulo(GetImovelByTituloRequest) returns (GetImovelByTituloResponse);
+    rpc GetImovelByEndereco(GetImovelByEnderecoRequest) returns (GetImovelByEnderecoResponse);
     rpc ListImovel(ListImovelRequest) returns (ListImovelResponse);
 }

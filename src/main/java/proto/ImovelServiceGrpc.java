@@ -155,6 +155,38 @@ public final class ImovelServiceGrpc {
      return getGetImovelByTituloMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<proto.GetImovelByEnderecoRequest,
+      proto.GetImovelByEnderecoResponse> getGetImovelByEnderecoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetImovelByEndereco",
+      requestType = proto.GetImovelByEnderecoRequest.class,
+      responseType = proto.GetImovelByEnderecoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<proto.GetImovelByEnderecoRequest,
+      proto.GetImovelByEnderecoResponse> getGetImovelByEnderecoMethod() {
+    io.grpc.MethodDescriptor<proto.GetImovelByEnderecoRequest, proto.GetImovelByEnderecoResponse> getGetImovelByEnderecoMethod;
+    if ((getGetImovelByEnderecoMethod = ImovelServiceGrpc.getGetImovelByEnderecoMethod) == null) {
+      synchronized (ImovelServiceGrpc.class) {
+        if ((getGetImovelByEnderecoMethod = ImovelServiceGrpc.getGetImovelByEnderecoMethod) == null) {
+          ImovelServiceGrpc.getGetImovelByEnderecoMethod = getGetImovelByEnderecoMethod = 
+              io.grpc.MethodDescriptor.<proto.GetImovelByEnderecoRequest, proto.GetImovelByEnderecoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "proto.ImovelService", "GetImovelByEndereco"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  proto.GetImovelByEnderecoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  proto.GetImovelByEnderecoResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new ImovelServiceMethodDescriptorSupplier("GetImovelByEndereco"))
+                  .build();
+          }
+        }
+     }
+     return getGetImovelByEnderecoMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<proto.ListImovelRequest,
       proto.ListImovelResponse> getListImovelMethod;
 
@@ -244,6 +276,13 @@ public final class ImovelServiceGrpc {
 
     /**
      */
+    public void getImovelByEndereco(proto.GetImovelByEnderecoRequest request,
+        io.grpc.stub.StreamObserver<proto.GetImovelByEnderecoResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetImovelByEnderecoMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void listImovel(proto.ListImovelRequest request,
         io.grpc.stub.StreamObserver<proto.ListImovelResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getListImovelMethod(), responseObserver);
@@ -279,6 +318,13 @@ public final class ImovelServiceGrpc {
                 proto.GetImovelByTituloRequest,
                 proto.GetImovelByTituloResponse>(
                   this, METHODID_GET_IMOVEL_BY_TITULO)))
+          .addMethod(
+            getGetImovelByEnderecoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                proto.GetImovelByEnderecoRequest,
+                proto.GetImovelByEnderecoResponse>(
+                  this, METHODID_GET_IMOVEL_BY_ENDERECO)))
           .addMethod(
             getListImovelMethod(),
             asyncUnaryCall(
@@ -342,6 +388,14 @@ public final class ImovelServiceGrpc {
 
     /**
      */
+    public void getImovelByEndereco(proto.GetImovelByEnderecoRequest request,
+        io.grpc.stub.StreamObserver<proto.GetImovelByEnderecoResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetImovelByEnderecoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listImovel(proto.ListImovelRequest request,
         io.grpc.stub.StreamObserver<proto.ListImovelResponse> responseObserver) {
       asyncUnaryCall(
@@ -393,6 +447,13 @@ public final class ImovelServiceGrpc {
     public proto.GetImovelByTituloResponse getImovelByTitulo(proto.GetImovelByTituloRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetImovelByTituloMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public proto.GetImovelByEnderecoResponse getImovelByEndereco(proto.GetImovelByEnderecoRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetImovelByEnderecoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -455,6 +516,14 @@ public final class ImovelServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<proto.GetImovelByEnderecoResponse> getImovelByEndereco(
+        proto.GetImovelByEnderecoRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetImovelByEnderecoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<proto.ListImovelResponse> listImovel(
         proto.ListImovelRequest request) {
       return futureUnaryCall(
@@ -466,7 +535,8 @@ public final class ImovelServiceGrpc {
   private static final int METHODID_DELETE_IMOVEL = 1;
   private static final int METHODID_GET_IMOVEL = 2;
   private static final int METHODID_GET_IMOVEL_BY_TITULO = 3;
-  private static final int METHODID_LIST_IMOVEL = 4;
+  private static final int METHODID_GET_IMOVEL_BY_ENDERECO = 4;
+  private static final int METHODID_LIST_IMOVEL = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -500,6 +570,10 @@ public final class ImovelServiceGrpc {
         case METHODID_GET_IMOVEL_BY_TITULO:
           serviceImpl.getImovelByTitulo((proto.GetImovelByTituloRequest) request,
               (io.grpc.stub.StreamObserver<proto.GetImovelByTituloResponse>) responseObserver);
+          break;
+        case METHODID_GET_IMOVEL_BY_ENDERECO:
+          serviceImpl.getImovelByEndereco((proto.GetImovelByEnderecoRequest) request,
+              (io.grpc.stub.StreamObserver<proto.GetImovelByEnderecoResponse>) responseObserver);
           break;
         case METHODID_LIST_IMOVEL:
           serviceImpl.listImovel((proto.ListImovelRequest) request,
@@ -570,6 +644,7 @@ public final class ImovelServiceGrpc {
               .addMethod(getDeleteImovelMethod())
               .addMethod(getGetImovelMethod())
               .addMethod(getGetImovelByTituloMethod())
+              .addMethod(getGetImovelByEnderecoMethod())
               .addMethod(getListImovelMethod())
               .build();
         }

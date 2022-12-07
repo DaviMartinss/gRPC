@@ -60,6 +60,16 @@ public final class ImovelOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_GetImovelByTituloResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetImovelByEnderecoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetImovelByEnderecoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetImovelByEnderecoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetImovelByEnderecoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_ListImovelRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -92,19 +102,24 @@ public final class ImovelOuterClass {
       "esponse\022\035\n\006imovel\030\001 \001(\0132\r.proto.Imovel\"*" +
       "\n\030GetImovelByTituloRequest\022\016\n\006titulo\030\002 \001" +
       "(\t\":\n\031GetImovelByTituloResponse\022\035\n\006imove" +
-      "l\030\001 \003(\0132\r.proto.Imovel\"\023\n\021ListImovelRequ" +
-      "est\"3\n\022ListImovelResponse\022\035\n\006imovel\030\001 \003(" +
-      "\0132\r.proto.Imovel2\374\002\n\rImovelService\022G\n\014Cr" +
-      "eateImovel\022\032.proto.CreateImovelRequest\032\033" +
-      ".proto.CreateImovelResponse\022G\n\014DeleteImo" +
-      "vel\022\032.proto.DeleteImovelRequest\032\033.proto." +
-      "DeleteImovelResponse\022>\n\tGetImovel\022\027.prot" +
-      "o.GetImovelRequest\032\030.proto.GetImovelResp" +
-      "onse\022V\n\021GetImovelByTitulo\022\037.proto.GetImo" +
-      "velByTituloRequest\032 .proto.GetImovelByTi" +
-      "tuloResponse\022A\n\nListImovel\022\030.proto.ListI" +
-      "movelRequest\032\031.proto.ListImovelResponseB" +
-      "\002P\001b\006proto3"
+      "l\030\001 \003(\0132\r.proto.Imovel\".\n\032GetImovelByEnd" +
+      "erecoRequest\022\020\n\010endereco\030\002 \001(\t\"<\n\033GetImo" +
+      "velByEnderecoResponse\022\035\n\006imovel\030\001 \003(\0132\r." +
+      "proto.Imovel\"\023\n\021ListImovelRequest\"3\n\022Lis" +
+      "tImovelResponse\022\035\n\006imovel\030\001 \003(\0132\r.proto." +
+      "Imovel2\332\003\n\rImovelService\022G\n\014CreateImovel" +
+      "\022\032.proto.CreateImovelRequest\032\033.proto.Cre" +
+      "ateImovelResponse\022G\n\014DeleteImovel\022\032.prot" +
+      "o.DeleteImovelRequest\032\033.proto.DeleteImov" +
+      "elResponse\022>\n\tGetImovel\022\027.proto.GetImove" +
+      "lRequest\032\030.proto.GetImovelResponse\022V\n\021Ge" +
+      "tImovelByTitulo\022\037.proto.GetImovelByTitul" +
+      "oRequest\032 .proto.GetImovelByTituloRespon" +
+      "se\022\\\n\023GetImovelByEndereco\022!.proto.GetImo" +
+      "velByEnderecoRequest\032\".proto.GetImovelBy" +
+      "EnderecoResponse\022A\n\nListImovel\022\030.proto.L" +
+      "istImovelRequest\032\031.proto.ListImovelRespo" +
+      "nseB\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -172,14 +187,26 @@ public final class ImovelOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetImovelByTituloResponse_descriptor,
         new java.lang.String[] { "Imovel", });
-    internal_static_proto_ListImovelRequest_descriptor =
+    internal_static_proto_GetImovelByEnderecoRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_proto_GetImovelByEnderecoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetImovelByEnderecoRequest_descriptor,
+        new java.lang.String[] { "Endereco", });
+    internal_static_proto_GetImovelByEnderecoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_proto_GetImovelByEnderecoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetImovelByEnderecoResponse_descriptor,
+        new java.lang.String[] { "Imovel", });
+    internal_static_proto_ListImovelRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_proto_ListImovelRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ListImovelRequest_descriptor,
         new java.lang.String[] { });
     internal_static_proto_ListImovelResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_proto_ListImovelResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ListImovelResponse_descriptor,
