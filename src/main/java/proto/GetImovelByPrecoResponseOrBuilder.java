@@ -3,8 +3,8 @@
 
 package proto;
 
-public interface GetImovelByTituloResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:proto.GetImovelByTituloResponse)
+public interface GetImovelByPrecoResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:proto.GetImovelByPrecoResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -30,14 +30,4 @@ public interface GetImovelByTituloResponseOrBuilder extends
    */
   proto.ImovelOrBuilder getImovelOrBuilder(
       int index);
-
-  /**
-   * <code>string notificacao = 2;</code>
-   */
-  java.lang.String getNotificacao();
-  /**
-   * <code>string notificacao = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getNotificacaoBytes();
 }

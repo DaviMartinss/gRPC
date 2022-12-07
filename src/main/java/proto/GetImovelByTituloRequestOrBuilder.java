@@ -8,11 +8,11 @@ public interface GetImovelByTituloRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string titulo = 2;</code>
+   * <code>string titulo = 1;</code>
    */
   java.lang.String getTitulo();
   /**
-   * <code>string titulo = 2;</code>
+   * <code>string titulo = 1;</code>
    */
   com.google.protobuf.ByteString
       getTituloBytes();

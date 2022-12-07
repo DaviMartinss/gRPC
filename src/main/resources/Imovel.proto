@@ -41,20 +41,39 @@ message GetImovelResponse {
 }
 
 message GetImovelByTituloRequest {
-	string titulo = 2;
+	string titulo = 1;
 }
 
 message GetImovelByTituloResponse {
 	repeated Imovel imovel = 1;
+	string notificacao = 2;
 }
  
  message GetImovelByEnderecoRequest {
-	string endereco = 2;
+	string endereco = 1;
 }
 
 message GetImovelByEnderecoResponse {
 	repeated Imovel imovel = 1;
 }
+
+ message GetImovelByPrecoRequest {
+	float precoInicial = 1;
+	float precoFinal = 2;
+}
+
+message GetImovelByPrecoResponse {
+	repeated Imovel imovel = 1;
+}
+
+ message UpdateImovelRequest {
+	Imovel imovel = 1;
+}
+
+message UpdateImovelResponse {
+	 Imovel imovel = 1;
+}
+
 message ListImovelRequest {
  
 }
@@ -69,5 +88,7 @@ service ImovelService {
     rpc GetImovel(GetImovelRequest) returns (GetImovelResponse);
     rpc GetImovelByTitulo(GetImovelByTituloRequest) returns (GetImovelByTituloResponse);
     rpc GetImovelByEndereco(GetImovelByEnderecoRequest) returns (GetImovelByEnderecoResponse);
+    rpc GetImovelByPreco(GetImovelByPrecoRequest) returns (GetImovelByPrecoResponse);
+    rpc UpdateImovel(UpdateImovelRequest) returns (UpdateImovelResponse);
     rpc ListImovel(ListImovelRequest) returns (ListImovelResponse);
 }

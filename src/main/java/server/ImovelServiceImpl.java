@@ -12,12 +12,16 @@ import proto.DeleteImovelRequest;
 import proto.DeleteImovelResponse;
 import proto.GetImovelByEnderecoRequest;
 import proto.GetImovelByEnderecoResponse;
+import proto.GetImovelByPrecoRequest;
+import proto.GetImovelByPrecoResponse;
 import proto.GetImovelByTituloRequest;
 import proto.GetImovelByTituloResponse;
 import proto.GetImovelRequest;
 import proto.GetImovelResponse;
 import proto.ListImovelRequest;
 import proto.ListImovelResponse;
+import proto.UpdateImovelRequest;
+import proto.UpdateImovelResponse;
 import proto.Imovel;
 import proto.ImovelServiceGrpc;
 
@@ -48,6 +52,27 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
  
         imovelMap.put(i, imovel);
         i++;
+    }
+    
+    @Override
+    public void updateImovel(UpdateImovelRequest request, StreamObserver<UpdateImovelResponse> responseObserver) {
+        System.out.println("updateImovel");
+        
+        if (imovelMap.containsKey(request.getImovel().getId())) {
+            imovelMap.put(request.getImovel().getId(), request.getImovel());
+            
+            Imovel imovel = imovelMap.get(request.getImovel().getId());
+            
+            System.out.println(imovel);
+            
+            UpdateImovelResponse response = UpdateImovelResponse.newBuilder().setImovel(imovel).build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        } else {
+            System.out.println("Imovel não encontrado");
+            responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
+        }
+ 
     }
  
     @Override
@@ -81,7 +106,6 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
     @Override
     public void getImovelByTitulo(GetImovelByTituloRequest request, StreamObserver<GetImovelByTituloResponse> responseObserver) {
         System.out.println("getImovelByTitulo");
-        //if (imovelMap.containsValue(request.getTitulo())) {
         
         List<Imovel> imovelMapAUX = imovelMap
         								.entrySet()
@@ -89,7 +113,7 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
         								.filter(e -> e.getValue().getTitulo().equals(request.getTitulo()))
         								.map(Map.Entry::getValue)
         								.toList();
-            									
+            		
             System.out.println(imovelMapAUX);
             
             GetImovelByTituloResponse response = GetImovelByTituloResponse.newBuilder()
@@ -97,35 +121,50 @@ public class ImovelServiceImpl extends ImovelServiceGrpc.ImovelServiceImplBase {
             															.build(); 
             responseObserver.onNext(response);
             responseObserver.onCompleted();
-        //} else {
-        //    System.out.println("Imovel not found");
-        //    responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
-        //}
  
     }
     
     @Override
     public void getImovelByEndereco(GetImovelByEnderecoRequest request, StreamObserver<GetImovelByEnderecoResponse> responseObserver) {
         System.out.println("getImovelByEndereco");
-        //if (imovelMap.containsValue(request.getTitulo())) {
         List<Imovel> imovelMapAUX = imovelMap
         								.entrySet()
         								.stream()
-        								.filter(e -> e.getValue().getEndereco().equals(request.getEndereco()))
+        								.filter(e -> e.getValue().getEndereco().toLowerCase().contains(request.getEndereco().toLowerCase()))
         								.map(Map.Entry::getValue)
         								.toList();
             									
             System.out.println(imovelMapAUX);
             
             GetImovelByEnderecoResponse response = GetImovelByEnderecoResponse.newBuilder()
+            																.addAllImovel(imovelMapAUX)
+            																.build(); 
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+ 
+    }
+    
+    @Override
+    public void getImovelByPreco(GetImovelByPrecoRequest request, StreamObserver<GetImovelByPrecoResponse> responseObserver) {
+        System.out.println("getImovelByPreco");
+        
+        List<Imovel> imovelMapAUX = imovelMap
+        								.entrySet()
+        								.stream()
+        								.filter(e -> 
+        										e.getValue().getPreco() >= request.getPrecoInicial()
+        										&&
+        										e.getValue().getPreco() <= request.getPrecoFinal())
+        								.map(Map.Entry::getValue)
+        								.toList();
+            									
+            System.out.println(imovelMapAUX);
+            
+            GetImovelByPrecoResponse response = GetImovelByPrecoResponse.newBuilder()
             															.addAllImovel(imovelMapAUX)
             															.build(); 
             responseObserver.onNext(response);
             responseObserver.onCompleted();
-        //} else {
-        //    System.out.println("Imovel not found");
-        //    responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
-        //}
  
     }
     

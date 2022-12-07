@@ -4,20 +4,19 @@
 package proto;
 
 /**
- * Protobuf type {@code proto.GetImovelByTituloResponse}
+ * Protobuf type {@code proto.GetImovelByPrecoResponse}
  */
-public  final class GetImovelByTituloResponse extends
+public  final class GetImovelByPrecoResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:proto.GetImovelByTituloResponse)
-    GetImovelByTituloResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:proto.GetImovelByPrecoResponse)
+    GetImovelByPrecoResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetImovelByTituloResponse.newBuilder() to construct.
-  private GetImovelByTituloResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetImovelByPrecoResponse.newBuilder() to construct.
+  private GetImovelByPrecoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetImovelByTituloResponse() {
+  private GetImovelByPrecoResponse() {
     imovel_ = java.util.Collections.emptyList();
-    notificacao_ = "";
   }
 
   @java.lang.Override
@@ -25,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetImovelByTituloResponse(
+  private GetImovelByPrecoResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,12 +52,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(proto.Imovel.parser(), extensionRegistry));
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            notificacao_ = s;
-            break;
-          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,18 +76,17 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloResponse_descriptor;
+    return proto.ImovelOuterClass.internal_static_proto_GetImovelByPrecoResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloResponse_fieldAccessorTable
+    return proto.ImovelOuterClass.internal_static_proto_GetImovelByPrecoResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            proto.GetImovelByTituloResponse.class, proto.GetImovelByTituloResponse.Builder.class);
+            proto.GetImovelByPrecoResponse.class, proto.GetImovelByPrecoResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMOVEL_FIELD_NUMBER = 1;
   private java.util.List<proto.Imovel> imovel_;
   /**
@@ -130,40 +122,6 @@ private static final long serialVersionUID = 0L;
     return imovel_.get(index);
   }
 
-  public static final int NOTIFICACAO_FIELD_NUMBER = 2;
-  private volatile java.lang.Object notificacao_;
-  /**
-   * <code>string notificacao = 2;</code>
-   */
-  public java.lang.String getNotificacao() {
-    java.lang.Object ref = notificacao_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      notificacao_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string notificacao = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getNotificacaoBytes() {
-    java.lang.Object ref = notificacao_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      notificacao_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -181,9 +139,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imovel_.size(); i++) {
       output.writeMessage(1, imovel_.get(i));
     }
-    if (!getNotificacaoBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, notificacao_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -197,9 +152,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, imovel_.get(i));
     }
-    if (!getNotificacaoBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, notificacao_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -210,16 +162,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof proto.GetImovelByTituloResponse)) {
+    if (!(obj instanceof proto.GetImovelByPrecoResponse)) {
       return super.equals(obj);
     }
-    proto.GetImovelByTituloResponse other = (proto.GetImovelByTituloResponse) obj;
+    proto.GetImovelByPrecoResponse other = (proto.GetImovelByPrecoResponse) obj;
 
     boolean result = true;
     result = result && getImovelList()
         .equals(other.getImovelList());
-    result = result && getNotificacao()
-        .equals(other.getNotificacao());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -235,76 +185,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IMOVEL_FIELD_NUMBER;
       hash = (53 * hash) + getImovelList().hashCode();
     }
-    hash = (37 * hash) + NOTIFICACAO_FIELD_NUMBER;
-    hash = (53 * hash) + getNotificacao().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(byte[] data)
+  public static proto.GetImovelByPrecoResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(java.io.InputStream input)
+  public static proto.GetImovelByPrecoResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.GetImovelByTituloResponse parseDelimitedFrom(java.io.InputStream input)
+  public static proto.GetImovelByPrecoResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloResponse parseDelimitedFrom(
+  public static proto.GetImovelByPrecoResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloResponse parseFrom(
+  public static proto.GetImovelByPrecoResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -317,7 +265,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(proto.GetImovelByTituloResponse prototype) {
+  public static Builder newBuilder(proto.GetImovelByPrecoResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -333,26 +281,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code proto.GetImovelByTituloResponse}
+   * Protobuf type {@code proto.GetImovelByPrecoResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:proto.GetImovelByTituloResponse)
-      proto.GetImovelByTituloResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:proto.GetImovelByPrecoResponse)
+      proto.GetImovelByPrecoResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloResponse_descriptor;
+      return proto.ImovelOuterClass.internal_static_proto_GetImovelByPrecoResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloResponse_fieldAccessorTable
+      return proto.ImovelOuterClass.internal_static_proto_GetImovelByPrecoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              proto.GetImovelByTituloResponse.class, proto.GetImovelByTituloResponse.Builder.class);
+              proto.GetImovelByPrecoResponse.class, proto.GetImovelByPrecoResponse.Builder.class);
     }
 
-    // Construct using proto.GetImovelByTituloResponse.newBuilder()
+    // Construct using proto.GetImovelByPrecoResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -377,25 +325,23 @@ private static final long serialVersionUID = 0L;
       } else {
         imovelBuilder_.clear();
       }
-      notificacao_ = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloResponse_descriptor;
+      return proto.ImovelOuterClass.internal_static_proto_GetImovelByPrecoResponse_descriptor;
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloResponse getDefaultInstanceForType() {
-      return proto.GetImovelByTituloResponse.getDefaultInstance();
+    public proto.GetImovelByPrecoResponse getDefaultInstanceForType() {
+      return proto.GetImovelByPrecoResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloResponse build() {
-      proto.GetImovelByTituloResponse result = buildPartial();
+    public proto.GetImovelByPrecoResponse build() {
+      proto.GetImovelByPrecoResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -403,10 +349,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloResponse buildPartial() {
-      proto.GetImovelByTituloResponse result = new proto.GetImovelByTituloResponse(this);
+    public proto.GetImovelByPrecoResponse buildPartial() {
+      proto.GetImovelByPrecoResponse result = new proto.GetImovelByPrecoResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (imovelBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           imovel_ = java.util.Collections.unmodifiableList(imovel_);
@@ -416,8 +361,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.imovel_ = imovelBuilder_.build();
       }
-      result.notificacao_ = notificacao_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -456,16 +399,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof proto.GetImovelByTituloResponse) {
-        return mergeFrom((proto.GetImovelByTituloResponse)other);
+      if (other instanceof proto.GetImovelByPrecoResponse) {
+        return mergeFrom((proto.GetImovelByPrecoResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(proto.GetImovelByTituloResponse other) {
-      if (other == proto.GetImovelByTituloResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(proto.GetImovelByPrecoResponse other) {
+      if (other == proto.GetImovelByPrecoResponse.getDefaultInstance()) return this;
       if (imovelBuilder_ == null) {
         if (!other.imovel_.isEmpty()) {
           if (imovel_.isEmpty()) {
@@ -492,10 +435,6 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (!other.getNotificacao().isEmpty()) {
-        notificacao_ = other.notificacao_;
-        onChanged();
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -511,11 +450,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      proto.GetImovelByTituloResponse parsedMessage = null;
+      proto.GetImovelByPrecoResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (proto.GetImovelByTituloResponse) e.getUnfinishedMessage();
+        parsedMessage = (proto.GetImovelByPrecoResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -765,75 +704,6 @@ private static final long serialVersionUID = 0L;
       }
       return imovelBuilder_;
     }
-
-    private java.lang.Object notificacao_ = "";
-    /**
-     * <code>string notificacao = 2;</code>
-     */
-    public java.lang.String getNotificacao() {
-      java.lang.Object ref = notificacao_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        notificacao_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string notificacao = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNotificacaoBytes() {
-      java.lang.Object ref = notificacao_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        notificacao_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string notificacao = 2;</code>
-     */
-    public Builder setNotificacao(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      notificacao_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string notificacao = 2;</code>
-     */
-    public Builder clearNotificacao() {
-      
-      notificacao_ = getDefaultInstance().getNotificacao();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string notificacao = 2;</code>
-     */
-    public Builder setNotificacaoBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      notificacao_ = value;
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -847,41 +717,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:proto.GetImovelByTituloResponse)
+    // @@protoc_insertion_point(builder_scope:proto.GetImovelByPrecoResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:proto.GetImovelByTituloResponse)
-  private static final proto.GetImovelByTituloResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:proto.GetImovelByPrecoResponse)
+  private static final proto.GetImovelByPrecoResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new proto.GetImovelByTituloResponse();
+    DEFAULT_INSTANCE = new proto.GetImovelByPrecoResponse();
   }
 
-  public static proto.GetImovelByTituloResponse getDefaultInstance() {
+  public static proto.GetImovelByPrecoResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetImovelByTituloResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetImovelByTituloResponse>() {
+  private static final com.google.protobuf.Parser<GetImovelByPrecoResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GetImovelByPrecoResponse>() {
     @java.lang.Override
-    public GetImovelByTituloResponse parsePartialFrom(
+    public GetImovelByPrecoResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetImovelByTituloResponse(input, extensionRegistry);
+      return new GetImovelByPrecoResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetImovelByTituloResponse> parser() {
+  public static com.google.protobuf.Parser<GetImovelByPrecoResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetImovelByTituloResponse> getParserForType() {
+  public com.google.protobuf.Parser<GetImovelByPrecoResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public proto.GetImovelByTituloResponse getDefaultInstanceForType() {
+  public proto.GetImovelByPrecoResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

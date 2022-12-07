@@ -4,19 +4,18 @@
 package proto;
 
 /**
- * Protobuf type {@code proto.GetImovelByTituloRequest}
+ * Protobuf type {@code proto.UpdateImovelRequest}
  */
-public  final class GetImovelByTituloRequest extends
+public  final class UpdateImovelRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:proto.GetImovelByTituloRequest)
-    GetImovelByTituloRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:proto.UpdateImovelRequest)
+    UpdateImovelRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetImovelByTituloRequest.newBuilder() to construct.
-  private GetImovelByTituloRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateImovelRequest.newBuilder() to construct.
+  private UpdateImovelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetImovelByTituloRequest() {
-    titulo_ = "";
+  private UpdateImovelRequest() {
   }
 
   @java.lang.Override
@@ -24,7 +23,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetImovelByTituloRequest(
+  private UpdateImovelRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -44,9 +43,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            proto.Imovel.Builder subBuilder = null;
+            if (imovel_ != null) {
+              subBuilder = imovel_.toBuilder();
+            }
+            imovel_ = input.readMessage(proto.Imovel.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(imovel_);
+              imovel_ = subBuilder.buildPartial();
+            }
 
-            titulo_ = s;
             break;
           }
           default: {
@@ -70,49 +76,36 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloRequest_descriptor;
+    return proto.ImovelOuterClass.internal_static_proto_UpdateImovelRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloRequest_fieldAccessorTable
+    return proto.ImovelOuterClass.internal_static_proto_UpdateImovelRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            proto.GetImovelByTituloRequest.class, proto.GetImovelByTituloRequest.Builder.class);
+            proto.UpdateImovelRequest.class, proto.UpdateImovelRequest.Builder.class);
   }
 
-  public static final int TITULO_FIELD_NUMBER = 1;
-  private volatile java.lang.Object titulo_;
+  public static final int IMOVEL_FIELD_NUMBER = 1;
+  private proto.Imovel imovel_;
   /**
-   * <code>string titulo = 1;</code>
+   * <code>.proto.Imovel imovel = 1;</code>
    */
-  public java.lang.String getTitulo() {
-    java.lang.Object ref = titulo_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      titulo_ = s;
-      return s;
-    }
+  public boolean hasImovel() {
+    return imovel_ != null;
   }
   /**
-   * <code>string titulo = 1;</code>
+   * <code>.proto.Imovel imovel = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTituloBytes() {
-    java.lang.Object ref = titulo_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      titulo_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public proto.Imovel getImovel() {
+    return imovel_ == null ? proto.Imovel.getDefaultInstance() : imovel_;
+  }
+  /**
+   * <code>.proto.Imovel imovel = 1;</code>
+   */
+  public proto.ImovelOrBuilder getImovelOrBuilder() {
+    return getImovel();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -129,8 +122,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTituloBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, titulo_);
+    if (imovel_ != null) {
+      output.writeMessage(1, getImovel());
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +134,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTituloBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, titulo_);
+    if (imovel_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getImovel());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +148,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof proto.GetImovelByTituloRequest)) {
+    if (!(obj instanceof proto.UpdateImovelRequest)) {
       return super.equals(obj);
     }
-    proto.GetImovelByTituloRequest other = (proto.GetImovelByTituloRequest) obj;
+    proto.UpdateImovelRequest other = (proto.UpdateImovelRequest) obj;
 
     boolean result = true;
-    result = result && getTitulo()
-        .equals(other.getTitulo());
+    result = result && (hasImovel() == other.hasImovel());
+    if (hasImovel()) {
+      result = result && getImovel()
+          .equals(other.getImovel());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +170,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TITULO_FIELD_NUMBER;
-    hash = (53 * hash) + getTitulo().hashCode();
+    if (hasImovel()) {
+      hash = (37 * hash) + IMOVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getImovel().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(byte[] data)
+  public static proto.UpdateImovelRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(java.io.InputStream input)
+  public static proto.UpdateImovelRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.GetImovelByTituloRequest parseDelimitedFrom(java.io.InputStream input)
+  public static proto.UpdateImovelRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloRequest parseDelimitedFrom(
+  public static proto.UpdateImovelRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.GetImovelByTituloRequest parseFrom(
+  public static proto.UpdateImovelRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +254,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(proto.GetImovelByTituloRequest prototype) {
+  public static Builder newBuilder(proto.UpdateImovelRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +270,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code proto.GetImovelByTituloRequest}
+   * Protobuf type {@code proto.UpdateImovelRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:proto.GetImovelByTituloRequest)
-      proto.GetImovelByTituloRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:proto.UpdateImovelRequest)
+      proto.UpdateImovelRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloRequest_descriptor;
+      return proto.ImovelOuterClass.internal_static_proto_UpdateImovelRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloRequest_fieldAccessorTable
+      return proto.ImovelOuterClass.internal_static_proto_UpdateImovelRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              proto.GetImovelByTituloRequest.class, proto.GetImovelByTituloRequest.Builder.class);
+              proto.UpdateImovelRequest.class, proto.UpdateImovelRequest.Builder.class);
     }
 
-    // Construct using proto.GetImovelByTituloRequest.newBuilder()
+    // Construct using proto.UpdateImovelRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,25 +307,29 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      titulo_ = "";
-
+      if (imovelBuilder_ == null) {
+        imovel_ = null;
+      } else {
+        imovel_ = null;
+        imovelBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return proto.ImovelOuterClass.internal_static_proto_GetImovelByTituloRequest_descriptor;
+      return proto.ImovelOuterClass.internal_static_proto_UpdateImovelRequest_descriptor;
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloRequest getDefaultInstanceForType() {
-      return proto.GetImovelByTituloRequest.getDefaultInstance();
+    public proto.UpdateImovelRequest getDefaultInstanceForType() {
+      return proto.UpdateImovelRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloRequest build() {
-      proto.GetImovelByTituloRequest result = buildPartial();
+    public proto.UpdateImovelRequest build() {
+      proto.UpdateImovelRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +337,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public proto.GetImovelByTituloRequest buildPartial() {
-      proto.GetImovelByTituloRequest result = new proto.GetImovelByTituloRequest(this);
-      result.titulo_ = titulo_;
+    public proto.UpdateImovelRequest buildPartial() {
+      proto.UpdateImovelRequest result = new proto.UpdateImovelRequest(this);
+      if (imovelBuilder_ == null) {
+        result.imovel_ = imovel_;
+      } else {
+        result.imovel_ = imovelBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -375,19 +382,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof proto.GetImovelByTituloRequest) {
-        return mergeFrom((proto.GetImovelByTituloRequest)other);
+      if (other instanceof proto.UpdateImovelRequest) {
+        return mergeFrom((proto.UpdateImovelRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(proto.GetImovelByTituloRequest other) {
-      if (other == proto.GetImovelByTituloRequest.getDefaultInstance()) return this;
-      if (!other.getTitulo().isEmpty()) {
-        titulo_ = other.titulo_;
-        onChanged();
+    public Builder mergeFrom(proto.UpdateImovelRequest other) {
+      if (other == proto.UpdateImovelRequest.getDefaultInstance()) return this;
+      if (other.hasImovel()) {
+        mergeImovel(other.getImovel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -404,11 +410,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      proto.GetImovelByTituloRequest parsedMessage = null;
+      proto.UpdateImovelRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (proto.GetImovelByTituloRequest) e.getUnfinishedMessage();
+        parsedMessage = (proto.UpdateImovelRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,73 +424,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object titulo_ = "";
+    private proto.Imovel imovel_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        proto.Imovel, proto.Imovel.Builder, proto.ImovelOrBuilder> imovelBuilder_;
     /**
-     * <code>string titulo = 1;</code>
+     * <code>.proto.Imovel imovel = 1;</code>
      */
-    public java.lang.String getTitulo() {
-      java.lang.Object ref = titulo_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        titulo_ = s;
-        return s;
+    public boolean hasImovel() {
+      return imovelBuilder_ != null || imovel_ != null;
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public proto.Imovel getImovel() {
+      if (imovelBuilder_ == null) {
+        return imovel_ == null ? proto.Imovel.getDefaultInstance() : imovel_;
       } else {
-        return (java.lang.String) ref;
+        return imovelBuilder_.getMessage();
       }
     }
     /**
-     * <code>string titulo = 1;</code>
+     * <code>.proto.Imovel imovel = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTituloBytes() {
-      java.lang.Object ref = titulo_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        titulo_ = b;
-        return b;
+    public Builder setImovel(proto.Imovel value) {
+      if (imovelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imovel_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        imovelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public Builder setImovel(
+        proto.Imovel.Builder builderForValue) {
+      if (imovelBuilder_ == null) {
+        imovel_ = builderForValue.build();
+        onChanged();
+      } else {
+        imovelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public Builder mergeImovel(proto.Imovel value) {
+      if (imovelBuilder_ == null) {
+        if (imovel_ != null) {
+          imovel_ =
+            proto.Imovel.newBuilder(imovel_).mergeFrom(value).buildPartial();
+        } else {
+          imovel_ = value;
+        }
+        onChanged();
+      } else {
+        imovelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public Builder clearImovel() {
+      if (imovelBuilder_ == null) {
+        imovel_ = null;
+        onChanged();
+      } else {
+        imovel_ = null;
+        imovelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public proto.Imovel.Builder getImovelBuilder() {
+      
+      onChanged();
+      return getImovelFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.proto.Imovel imovel = 1;</code>
+     */
+    public proto.ImovelOrBuilder getImovelOrBuilder() {
+      if (imovelBuilder_ != null) {
+        return imovelBuilder_.getMessageOrBuilder();
+      } else {
+        return imovel_ == null ?
+            proto.Imovel.getDefaultInstance() : imovel_;
       }
     }
     /**
-     * <code>string titulo = 1;</code>
+     * <code>.proto.Imovel imovel = 1;</code>
      */
-    public Builder setTitulo(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      titulo_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string titulo = 1;</code>
-     */
-    public Builder clearTitulo() {
-      
-      titulo_ = getDefaultInstance().getTitulo();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string titulo = 1;</code>
-     */
-    public Builder setTituloBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      titulo_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        proto.Imovel, proto.Imovel.Builder, proto.ImovelOrBuilder> 
+        getImovelFieldBuilder() {
+      if (imovelBuilder_ == null) {
+        imovelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            proto.Imovel, proto.Imovel.Builder, proto.ImovelOrBuilder>(
+                getImovel(),
+                getParentForChildren(),
+                isClean());
+        imovel_ = null;
+      }
+      return imovelBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -499,41 +553,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:proto.GetImovelByTituloRequest)
+    // @@protoc_insertion_point(builder_scope:proto.UpdateImovelRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:proto.GetImovelByTituloRequest)
-  private static final proto.GetImovelByTituloRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:proto.UpdateImovelRequest)
+  private static final proto.UpdateImovelRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new proto.GetImovelByTituloRequest();
+    DEFAULT_INSTANCE = new proto.UpdateImovelRequest();
   }
 
-  public static proto.GetImovelByTituloRequest getDefaultInstance() {
+  public static proto.UpdateImovelRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetImovelByTituloRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetImovelByTituloRequest>() {
+  private static final com.google.protobuf.Parser<UpdateImovelRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateImovelRequest>() {
     @java.lang.Override
-    public GetImovelByTituloRequest parsePartialFrom(
+    public UpdateImovelRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetImovelByTituloRequest(input, extensionRegistry);
+      return new UpdateImovelRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetImovelByTituloRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateImovelRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetImovelByTituloRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateImovelRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public proto.GetImovelByTituloRequest getDefaultInstanceForType() {
+  public proto.UpdateImovelRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

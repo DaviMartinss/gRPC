@@ -8,11 +8,11 @@ public interface GetImovelByEnderecoRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string endereco = 2;</code>
+   * <code>string endereco = 1;</code>
    */
   java.lang.String getEndereco();
   /**
-   * <code>string endereco = 2;</code>
+   * <code>string endereco = 1;</code>
    */
   com.google.protobuf.ByteString
       getEnderecoBytes();

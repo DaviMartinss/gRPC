@@ -70,6 +70,26 @@ public final class ImovelOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_GetImovelByEnderecoResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetImovelByPrecoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetImovelByPrecoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetImovelByPrecoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetImovelByPrecoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UpdateImovelRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UpdateImovelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UpdateImovelResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UpdateImovelResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_ListImovelRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -100,26 +120,36 @@ public final class ImovelOuterClass {
       "elResponse\022\020\n\010imovelId\030\001 \001(\005\"$\n\020GetImove" +
       "lRequest\022\020\n\010imovelId\030\001 \001(\005\"2\n\021GetImovelR" +
       "esponse\022\035\n\006imovel\030\001 \001(\0132\r.proto.Imovel\"*" +
-      "\n\030GetImovelByTituloRequest\022\016\n\006titulo\030\002 \001" +
-      "(\t\":\n\031GetImovelByTituloResponse\022\035\n\006imove" +
-      "l\030\001 \003(\0132\r.proto.Imovel\".\n\032GetImovelByEnd" +
-      "erecoRequest\022\020\n\010endereco\030\002 \001(\t\"<\n\033GetImo" +
-      "velByEnderecoResponse\022\035\n\006imovel\030\001 \003(\0132\r." +
-      "proto.Imovel\"\023\n\021ListImovelRequest\"3\n\022Lis" +
-      "tImovelResponse\022\035\n\006imovel\030\001 \003(\0132\r.proto." +
-      "Imovel2\332\003\n\rImovelService\022G\n\014CreateImovel" +
-      "\022\032.proto.CreateImovelRequest\032\033.proto.Cre" +
-      "ateImovelResponse\022G\n\014DeleteImovel\022\032.prot" +
-      "o.DeleteImovelRequest\032\033.proto.DeleteImov" +
-      "elResponse\022>\n\tGetImovel\022\027.proto.GetImove" +
-      "lRequest\032\030.proto.GetImovelResponse\022V\n\021Ge" +
-      "tImovelByTitulo\022\037.proto.GetImovelByTitul" +
-      "oRequest\032 .proto.GetImovelByTituloRespon" +
-      "se\022\\\n\023GetImovelByEndereco\022!.proto.GetImo" +
-      "velByEnderecoRequest\032\".proto.GetImovelBy" +
-      "EnderecoResponse\022A\n\nListImovel\022\030.proto.L" +
-      "istImovelRequest\032\031.proto.ListImovelRespo" +
-      "nseB\002P\001b\006proto3"
+      "\n\030GetImovelByTituloRequest\022\016\n\006titulo\030\001 \001" +
+      "(\t\"O\n\031GetImovelByTituloResponse\022\035\n\006imove" +
+      "l\030\001 \003(\0132\r.proto.Imovel\022\023\n\013notificacao\030\002 " +
+      "\001(\t\".\n\032GetImovelByEnderecoRequest\022\020\n\010end" +
+      "ereco\030\001 \001(\t\"<\n\033GetImovelByEnderecoRespon" +
+      "se\022\035\n\006imovel\030\001 \003(\0132\r.proto.Imovel\"C\n\027Get" +
+      "ImovelByPrecoRequest\022\024\n\014precoInicial\030\001 \001" +
+      "(\002\022\022\n\nprecoFinal\030\002 \001(\002\"9\n\030GetImovelByPre" +
+      "coResponse\022\035\n\006imovel\030\001 \003(\0132\r.proto.Imove" +
+      "l\"4\n\023UpdateImovelRequest\022\035\n\006imovel\030\001 \001(\013" +
+      "2\r.proto.Imovel\"5\n\024UpdateImovelResponse\022" +
+      "\035\n\006imovel\030\001 \001(\0132\r.proto.Imovel\"\023\n\021ListIm" +
+      "ovelRequest\"3\n\022ListImovelResponse\022\035\n\006imo" +
+      "vel\030\001 \003(\0132\r.proto.Imovel2\370\004\n\rImovelServi" +
+      "ce\022G\n\014CreateImovel\022\032.proto.CreateImovelR" +
+      "equest\032\033.proto.CreateImovelResponse\022G\n\014D" +
+      "eleteImovel\022\032.proto.DeleteImovelRequest\032" +
+      "\033.proto.DeleteImovelResponse\022>\n\tGetImove" +
+      "l\022\027.proto.GetImovelRequest\032\030.proto.GetIm" +
+      "ovelResponse\022V\n\021GetImovelByTitulo\022\037.prot" +
+      "o.GetImovelByTituloRequest\032 .proto.GetIm" +
+      "ovelByTituloResponse\022\\\n\023GetImovelByEnder" +
+      "eco\022!.proto.GetImovelByEnderecoRequest\032\"" +
+      ".proto.GetImovelByEnderecoResponse\022S\n\020Ge" +
+      "tImovelByPreco\022\036.proto.GetImovelByPrecoR" +
+      "equest\032\037.proto.GetImovelByPrecoResponse\022" +
+      "G\n\014UpdateImovel\022\032.proto.UpdateImovelRequ" +
+      "est\032\033.proto.UpdateImovelResponse\022A\n\nList" +
+      "Imovel\022\030.proto.ListImovelRequest\032\031.proto" +
+      ".ListImovelResponseB\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -186,7 +216,7 @@ public final class ImovelOuterClass {
     internal_static_proto_GetImovelByTituloResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetImovelByTituloResponse_descriptor,
-        new java.lang.String[] { "Imovel", });
+        new java.lang.String[] { "Imovel", "Notificacao", });
     internal_static_proto_GetImovelByEnderecoRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_proto_GetImovelByEnderecoRequest_fieldAccessorTable = new
@@ -199,14 +229,38 @@ public final class ImovelOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetImovelByEnderecoResponse_descriptor,
         new java.lang.String[] { "Imovel", });
-    internal_static_proto_ListImovelRequest_descriptor =
+    internal_static_proto_GetImovelByPrecoRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_proto_GetImovelByPrecoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetImovelByPrecoRequest_descriptor,
+        new java.lang.String[] { "PrecoInicial", "PrecoFinal", });
+    internal_static_proto_GetImovelByPrecoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_proto_GetImovelByPrecoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetImovelByPrecoResponse_descriptor,
+        new java.lang.String[] { "Imovel", });
+    internal_static_proto_UpdateImovelRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_proto_UpdateImovelRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UpdateImovelRequest_descriptor,
+        new java.lang.String[] { "Imovel", });
+    internal_static_proto_UpdateImovelResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_proto_UpdateImovelResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UpdateImovelResponse_descriptor,
+        new java.lang.String[] { "Imovel", });
+    internal_static_proto_ListImovelRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_proto_ListImovelRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ListImovelRequest_descriptor,
         new java.lang.String[] { });
     internal_static_proto_ListImovelResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_proto_ListImovelResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ListImovelResponse_descriptor,

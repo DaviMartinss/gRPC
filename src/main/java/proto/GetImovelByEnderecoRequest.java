@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             endereco_ = s;
@@ -81,10 +81,10 @@ private static final long serialVersionUID = 0L;
             proto.GetImovelByEnderecoRequest.class, proto.GetImovelByEnderecoRequest.Builder.class);
   }
 
-  public static final int ENDERECO_FIELD_NUMBER = 2;
+  public static final int ENDERECO_FIELD_NUMBER = 1;
   private volatile java.lang.Object endereco_;
   /**
-   * <code>string endereco = 2;</code>
+   * <code>string endereco = 1;</code>
    */
   public java.lang.String getEndereco() {
     java.lang.Object ref = endereco_;
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string endereco = 2;</code>
+   * <code>string endereco = 1;</code>
    */
   public com.google.protobuf.ByteString
       getEnderecoBytes() {
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getEnderecoBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, endereco_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, endereco_);
     }
     unknownFields.writeTo(output);
   }
@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getEnderecoBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, endereco_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, endereco_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object endereco_ = "";
     /**
-     * <code>string endereco = 2;</code>
+     * <code>string endereco = 1;</code>
      */
     public java.lang.String getEndereco() {
       java.lang.Object ref = endereco_;
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string endereco = 2;</code>
+     * <code>string endereco = 1;</code>
      */
     public com.google.protobuf.ByteString
         getEnderecoBytes() {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string endereco = 2;</code>
+     * <code>string endereco = 1;</code>
      */
     public Builder setEndereco(
         java.lang.String value) {
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string endereco = 2;</code>
+     * <code>string endereco = 1;</code>
      */
     public Builder clearEndereco() {
       
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string endereco = 2;</code>
+     * <code>string endereco = 1;</code>
      */
     public Builder setEnderecoBytes(
         com.google.protobuf.ByteString value) {
