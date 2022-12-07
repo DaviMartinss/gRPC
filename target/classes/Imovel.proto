@@ -1,0 +1,65 @@
+syntax = "proto3";
+ 
+package proto;
+ 
+option java_multiple_files = true;
+ 
+message Imovel {
+    int32 id = 1;
+    string titulo = 2;
+    string endereco = 3;
+    string tipo = 4;
+    int32 num_quartos = 5;
+    int32 num_garagem = 6;
+    float area_construida = 7;
+    float area_terreno = 8;
+    float preco = 9; 
+}
+ 
+message CreateImovelRequest {
+    Imovel imovel = 1;
+}
+ 
+message CreateImovelResponse {
+    Imovel imovel = 1;
+}
+ 
+message DeleteImovelRequest {
+    int32 imovelId = 1;
+}
+ 
+message DeleteImovelResponse {
+    int32 imovelId = 1;
+}
+ 
+message GetImovelRequest {
+	int32 imovelId = 1;
+}
+ 
+message GetImovelResponse {
+    Imovel imovel = 1;
+}
+
+message GetImovelByTituloRequest {
+	string titulo = 2;
+}
+
+message GetImovelByTituloResponse {
+	repeated Imovel imovel = 1;
+}
+ 
+message ListImovelRequest {
+ 
+}
+ 
+message ListImovelResponse {
+    repeated Imovel imovel = 1;
+}
+ 
+service ImovelService {
+    rpc CreateImovel(CreateImovelRequest) returns (CreateImovelResponse);
+    rpc DeleteImovel(DeleteImovelRequest) returns (DeleteImovelResponse);
+    rpc GetImovel(GetImovelRequest) returns (GetImovelResponse);
+    rpc GetImovelByTitulo(GetImovelByTituloRequest) returns (GetImovelByTituloResponse);
+    rpc ListImovel(ListImovelRequest) returns (ListImovelResponse);
+}
